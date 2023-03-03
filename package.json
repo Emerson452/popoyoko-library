@@ -1,5 +1,5 @@
 {
-  "name": "react-component-library",
+  "name": "popoyoko-library",
   "version": "1.0.0",
   "main": "build/index.js",
   "module": "build/index.esm.js",
@@ -66,5 +66,8 @@
     "rollup-plugin-typescript2": "^0.29.0",
     "ts-jest": "^26.5.6",
     "typescript": "^4.8.4"
+  },
+  "dependencies": {
+    "postcss": "^8.4.21"
   }
 }
