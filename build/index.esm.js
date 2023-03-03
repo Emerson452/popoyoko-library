@@ -1,41 +1,4 @@
-import React from 'react';
-
-function styleInject(css, ref) {
-  if ( ref === void 0 ) ref = {};
-  var insertAt = ref.insertAt;
-
-  if (!css || typeof document === 'undefined') { return; }
-
-  var head = document.head || document.getElementsByTagName('head')[0];
-  var style = document.createElement('style');
-  style.type = 'text/css';
-
-  if (insertAt === 'top') {
-    if (head.firstChild) {
-      head.insertBefore(style, head.firstChild);
-    } else {
-      head.appendChild(style);
-    }
-  } else {
-    head.appendChild(style);
-  }
-
-  if (style.styleSheet) {
-    style.styleSheet.cssText = css;
-  } else {
-    style.appendChild(document.createTextNode(css));
-  }
-}
-
-var css_248z$1 = ".test-component {\n  background-color: var(--background);\n  color: var(--font-color);\n  border: 1px solid var(--harvey-black);\n  padding: 16px;\n  width: 360px;\n  text-align: center;\n}\n\n.test-component .heading {\n  font-size: var(--heading-font-size);\n}";
-styleInject(css_248z$1);
-
-var TestComponent = function (_a) {
-    var heading = _a.heading, content = _a.content;
-    return (React.createElement("div", { "data-testid": "test-component", className: "test-component" },
-        React.createElement("h1", { "data-testid": "test-component__heading", className: "heading" }, heading),
-        React.createElement("div", { "data-testid": "test-component__content" }, content)));
-};
+import { jsxs, jsx } from 'react/jsx-runtime';
 
 /******************************************************************************
 Copyright (c) Microsoft Corporation.
@@ -75,6 +38,41 @@ function __rest(s, e) {
     return t;
 }
 
+function styleInject(css, ref) {
+  if ( ref === void 0 ) ref = {};
+  var insertAt = ref.insertAt;
+
+  if (!css || typeof document === 'undefined') { return; }
+
+  var head = document.head || document.getElementsByTagName('head')[0];
+  var style = document.createElement('style');
+  style.type = 'text/css';
+
+  if (insertAt === 'top') {
+    if (head.firstChild) {
+      head.insertBefore(style, head.firstChild);
+    } else {
+      head.appendChild(style);
+    }
+  } else {
+    head.appendChild(style);
+  }
+
+  if (style.styleSheet) {
+    style.styleSheet.cssText = css;
+  } else {
+    style.appendChild(document.createTextNode(css));
+  }
+}
+
+var css_248z$1 = ".test-component {\n  background-color: var(--background);\n  color: var(--font-color);\n  border: 1px solid var(--harvey-black);\n  padding: 16px;\n  width: 360px;\n  text-align: center;\n}\n\n.test-component .heading {\n  font-size: var(--heading-font-size);\n}";
+styleInject(css_248z$1);
+
+var TestComponent = function (_a) {
+    var heading = _a.heading, content = _a.content;
+    return (jsxs("div", __assign({ "data-testid": "test-component", className: "test-component" }, { children: [jsx("h1", __assign({ "data-testid": "test-component__heading", className: "heading" }, { children: heading })), jsx("div", __assign({ "data-testid": "test-component__content" }, { children: content }))] })));
+};
+
 var css_248z = ".storybook-button {\n    font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n    font-weight: 700;\n    border: 0;\n    border-radius: 3em;\n    cursor: pointer;\n    display: inline-block;\n    line-height: 1;\n  }\n  .storybook-button--primary {\n    color: white;\n    background-color: #1ea7fd;\n  }\n  .storybook-button--secondary {\n    color: #333;\n    background-color: transparent;\n    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\n  }\n  .storybook-button--small {\n    font-size: 12px;\n    padding: 10px 16px;\n  }\n  .storybook-button--medium {\n    font-size: 14px;\n    padding: 11px 20px;\n  }\n  .storybook-button--large {\n    font-size: 16px;\n    padding: 12px 24px;\n  }";
 styleInject(css_248z);
 
@@ -86,7 +84,7 @@ var Button = function (_a) {
     var mode = primary
         ? "storybook-button--primary"
         : "storybook-button--secondary";
-    return (React.createElement("button", __assign({ type: "button", className: ["storybook-button", "storybook-button--".concat(size), mode].join(" "), style: { backgroundColor: backgroundColor } }, props), label));
+    return (jsx("button", __assign({ type: "button", className: ["storybook-button", "storybook-button--".concat(size), mode].join(" "), style: { backgroundColor: backgroundColor } }, props, { children: label })));
 };
 
 export { Button, TestComponent };
