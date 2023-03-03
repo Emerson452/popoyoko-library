@@ -30,6 +30,7 @@ export default {
     typescript({ useTsconfigDeclarationDir: true }),
     postcss(),
     copy({
+      
       targets: [
         {
           src: "src/index.css",
