@@ -1,0 +1,43 @@
+@import '../../index.scss';
+
+.playerBar{
+	position: sticky;
+	@include flex(column, center);
+	align-items: center;
+	bottom: 0;
+	width: 100%;
+	background-color: rgba($dark, 0.4);
+	border-top: 1px solid rgba($color: $light, $alpha: 0.05);
+	backdrop-filter: blur(10px);
+	padding: 0 16px;
+	box-sizing: border-box;
+	@include shadow($primaryDarker, 0.9);
+	.content{
+		@include flex(row, center);
+		justify-content: space-between;
+		max-width: 900px;
+		// padding: 0 32px;
+		box-sizing: border-box;
+		width: 100%;
+		padding-bottom: 8px;
+		.infoControl{
+			@include flex(row,center);
+			flex-grow: 1;
+			ul{
+				@include flex(column, flex-start);
+				padding: 0;
+				margin-left: 8px;
+				li{
+					@include flex(row, flex-end);
+					margin: 0;
+					list-style: none;
+					flex-grow: 1;
+					&.songName{
+						font-weight: 600;
+						margin-bottom: 4px;
+					}
+				}
+			}
+		}
+	}
+}

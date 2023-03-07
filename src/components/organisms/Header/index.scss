@@ -1,0 +1,86 @@
+@import '../../index.scss';
+
+@keyframes colorChange{
+	0%{
+		fill: $secondary;
+		padding-bottom: 0;
+	}
+	50%{
+		fill: $light;
+		padding-bottom: 2px;
+	}
+	100%{
+		fill: $secondary;
+		padding-bottom: 0;
+	}
+}
+
+@keyframes mover {
+	0%{
+		transform: translateX( 0px);
+	}
+	80%{
+		transform: translateX(-3px);
+	}
+	90%{
+		transform: translateX( -3px);
+	}
+
+	100%{
+		transform: translateX( 0px)
+	}
+}
+
+header{
+	@include flex(row, stretch);
+	position: sticky;
+	z-index: 1;
+	top: 0;
+	justify-content: center;
+	padding: 8px 16px;
+	background-color: $darker;
+	min-width: auto;
+	@include headerShadow($primary);
+	.content{
+		@include flex(row, center);
+		justify-content: space-between;
+		width: 100%;
+		max-width: 900px;
+		.iconLogo{
+			fill: $secondary;
+			cursor: pointer;
+			&:hover{
+				color: $light;
+				animation-name: colorChange;
+				animation-duration: 0.6s;
+				animation-timing-function: ease-in-out;
+				animation-fill-mode: both;
+				animation-iteration-count: infinite;
+				.mover{
+					animation-name: mover;
+					animation-duration: 1.2s;
+					animation-timing-function: ease-in-out;
+					animation-fill-mode: both;
+					animation-iteration-count: infinite;
+				}
+			}
+		}
+		h1{
+			cursor: pointer;
+			&:hover{
+				color: $light;
+				animation-name: colorChange;
+				animation-duration: 0.6s;
+				animation-timing-function: ease-in-out;
+				animation-fill-mode: both;
+				animation-iteration-count: infinite;
+			}
+		}
+		.right{
+			@include flex(row, center);
+			.avatar{
+				margin-left: 8px;
+			}
+		}	
+	}
+}

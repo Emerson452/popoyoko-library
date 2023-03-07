@@ -1,0 +1,39 @@
+@import "../../index.scss";
+
+.playbackTimeline{
+    @include flex(row, stretch);
+    position: absolute;
+    background-color: rgba($color: $light, $alpha: 0.1);
+    left: 0;
+    bottom: 0;
+    height: 8px;
+    padding: 0;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 1px;
+    transition: all 0.1s ease-in-out;
+    .track{
+        transition: all 0.2s ease-in-out;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background-color: $primary;
+        height: 100%;
+    }
+    .selection{
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background-color: rgba($light, 0.3);
+        filter: invert(0);
+        height: 100%;
+    }
+    &:hover{
+        height: 16px;
+        transition-duration: 0s;
+        .track{
+            background-color: rgba($primaryDarker, 0.7);
+        }
+    }
+
+}

@@ -1,0 +1,12 @@
+@import '../../index.scss';
+
+label{
+	margin-bottom: 8px;	
+}
+input{
+	margin: 0;
+}
+span{
+	@include flex(column, flex-end);
+}
+

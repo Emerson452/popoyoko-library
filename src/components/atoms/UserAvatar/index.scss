@@ -1,0 +1,26 @@
+@import '../../index.scss';
+
+img{
+	position: relative;
+	@include flex(row, center);
+	width: 32px;
+	height: 32px;
+	object-fit: cover;
+	border-radius: 50%;
+	border: 2px solid $light;
+	cursor: pointer;
+	@include shadow($primary, 0);
+	transition: all 0.3 ease-in-out;
+	&:hover{
+		border: 2px solid $primaryDarker;
+		@include shadow($primary, 0.8);
+	}
+	&.big{
+		height: 64px;
+		width: 64px;
+		cursor: default;
+		&:hover{
+			border: 2px solid $light;
+		}
+	}
+}

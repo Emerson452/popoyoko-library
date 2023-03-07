@@ -1,0 +1,13 @@
+@import '../index.scss';
+
+form{
+	@include flex(column);
+	justify-content: center;
+	span{
+		@include flex(column);
+		margin: 8px 0;
+		input{
+				margin: 0;
+		}
+	}
+}

@@ -1,0 +1,8 @@
+@import "../index.scss";
+
+.feed{
+    padding: 16px;
+    flex-grow: 1;
+    @include flex(column, center);
+    justify-content: stretch;
+}

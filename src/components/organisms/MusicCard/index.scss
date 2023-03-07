@@ -1,0 +1,63 @@
+@import "../../index.scss";
+
+.musicCard{
+    align-items: stretch;
+    justify-content: space-between;
+    overflow: hidden;
+    .canvas{
+        display: block;
+        align-self: center;
+        position: absolute;
+        z-index: -1;
+        bottom: 0;
+        left: 0;
+        overflow: hidden;
+        opacity: 0.7;
+        backdrop-filter: blur(16px);
+        cursor: pointer;
+    }
+    input{
+        display: none;
+    }
+    .header{
+        ul{
+            @include flex(column, flex-start);
+            margin: 0;
+            padding: 0;
+            li{
+                @include flex(row);
+                list-style: none;
+                margin-bottom: 4px;
+                font-size: 14px;
+                &.title{
+                    font-size: 20px;
+                    font-weight: 600;
+                }
+                a{
+                    margin-left: 4px;
+                    color: $secondary;
+                    font-weight: 600;
+                    text-decoration: none;
+                }
+            }
+        }
+        @include flex(row, flex-start);
+        justify-content: space-between;
+        .left{
+            @include flex (row, center);
+            img{
+                margin-right: 16px;
+                flex-grow: 2;
+                min-width: 32px;
+            }
+        }
+    }
+    .footer{
+        @include flex(row, center);
+        justify-content: flex-end;
+        margin-top: 16px;
+        button{
+            margin: 0;
+        }
+    }
+}
