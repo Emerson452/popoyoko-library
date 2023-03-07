@@ -1,59 +1,92 @@
 {
-  "name": "popoyoko-library",
-  "version": "1.0.0",
+  "name": "popoyoko-ui",
+  "version": "0.1.0",
   "main": "build/index.js",
   "module": "build/index.esm.js",
   "files": [
     "build"
   ],
   "types": "build/index.d.ts",
-  "description": "A skeleton to create your own React component library using Rollup, TypeScript, Sass and Storybook",
-  "scripts": {
-    "build": "rollup -c",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "storybook": "start-storybook -p 6006",
-    "storybook:export": "build-storybook",
-    "generate": "node ./util/create-component",
-    "prepublishOnly": "npm run build"
-  },
+  "private": true,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/HarveyD/react-component-library.git"
+    "url": "git+https://github.com/Emerson452/popoyoko-library.git"
   },
-  "keywords": [
-    "React",
-    "Component",
-    "Library",
-    "Rollup",
-    "Typescript",
-    "Sass",
-    "Storybook"
-  ],
-  "author": "Harvey Delaney",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/HarveyD/react-component-library/issues"
+  "dependencies": {
+    "@storybook/preset-create-react-app": "^4.1.2",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.18.12",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "ts-loader": "^9.4.2",
+    "typescript": "^4.9.5",
+    "web-vitals": "^2.1.4"
   },
-  "homepage": "https://github.com/HarveyD/react-component-library#readme",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "chromatic": "npx chromatic --project-token=e656df12e018",
+    "deploy-storybook": "storybook-to-ghpages",
+    "generate": "node ./util/create-component",
+    "build-library": "rollup -c"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
   "peerDependencies": {
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.15.0",
+    "@babel/core": "^7.21.0",
+    "@storybook/addon-actions": "^6.5.16",
+    "@storybook/addon-essentials": "^6.5.16",
+    "@storybook/addon-interactions": "^6.5.16",
+    "@storybook/addon-links": "^6.5.16",
+    "@storybook/builder-webpack4": "^6.5.16",
+    "@storybook/builder-webpack5": "^6.5.16",
+    "@storybook/manager-webpack4": "^6.5.16",
+    "@storybook/manager-webpack5": "^6.5.16",
+    "@storybook/react": "^6.5.16",
+    "@storybook/storybook-deployer": "^2.8.16",
+    "@storybook/testing-library": "^0.0.13",
+    "babel-loader": "^8.3.0",
+    "chromatic": "^6.17.0",
+    "webpack": "5",
     "@rollup/plugin-commonjs": "^17.1.0",
     "@rollup/plugin-node-resolve": "^11.2.1",
-    "@storybook/addon-essentials": "^6.5.13",
     "@storybook/addon-postcss": "^2.0.0",
-    "@storybook/react": "^6.5.13",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@types/jest": "^24.9.1",
     "@types/react": "^16.14.14",
     "@types/react-dom": "^16.9.14",
     "autoprefixer": "^10.4.13",
-    "babel-loader": "^8.2.2",
     "babel-preset-react-app": "^10.0.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^26.6.3",
@@ -65,9 +98,9 @@
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-typescript2": "^0.29.0",
     "ts-jest": "^26.5.6",
-    "typescript": "^4.8.4"
-  },
-  "dependencies": {
+    "typescript": "^4.8.4",
     "postcss": "^8.4.21"
-  }
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "popoyoko-ui@0.1.0"
 }
